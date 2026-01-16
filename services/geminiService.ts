@@ -37,9 +37,13 @@ export const getEducationalAnswerStream = async (
     const response = await chatRef.current.sendMessageStream({ message: prompt });
     return response;
     
-  } catch (error)
- {
-    console.error("Gemini API call failed:", error);
-    throw new Error(`Gagal mendapatkan respons dari AI. Detail: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  } catch (error) {
+    // Defensive error handling to prevent circular structure errors from the SDK.
+    // Extract only the message string from the raw error object.
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error("Gemini API call failed:", errorMessage);
+    
+    // Throw a new, clean Error object with just the message string.
+    throw new Error(`Gagal mendapatkan respons dari AI. Detail: ${errorMessage}`);
   }
 };

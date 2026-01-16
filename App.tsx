@@ -1,13 +1,13 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { ChatMessage as ChatMessageType } from './types';
-import { getEducationalAnswerStream } from './services/geminiService';
-import Header from './components/Header';
-import ChatInput from './components/ChatInput';
-import ChatMessage from './components/ChatMessage';
-import LoadingSpinner from './components/LoadingSpinner';
-import WelcomeScreen from './components/WelcomeScreen';
-import LandingPage from './components/LandingPage';
+import { ChatMessage as ChatMessageType } from './types.ts';
+import { getEducationalAnswerStream } from './services/geminiService.ts';
+import Header from './components/Header.tsx';
+import ChatInput from './components/ChatInput.tsx';
+import ChatMessage from './components/ChatMessage.tsx';
+import LoadingSpinner from './components/LoadingSpinner.tsx';
+import WelcomeScreen from './components/WelcomeScreen.tsx';
+import LandingPage from './components/LandingPage.tsx';
 import { GenerateContentResponse } from '@google/genai';
 
 const App: React.FC = () => {

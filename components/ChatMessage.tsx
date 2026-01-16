@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
-import { Role } from '../types';
-import CodeBlock from './CodeBlock';
+import { Role } from '../types.ts';
+import CodeBlock from './CodeBlock.tsx';
 
 // Make hljs available in the component
 declare const hljs: any;
@@ -121,7 +121,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ role, text, onSuggestionClick
           aria-label="Salin jawaban"
         >
           {isCopied ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg xmlns="http://www.w.org/2000/svg" className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           ) : (

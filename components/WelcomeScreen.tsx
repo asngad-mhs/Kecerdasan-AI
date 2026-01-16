@@ -20,7 +20,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onPromptClick }) => {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       </div>
-      <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100">Selamat Datang di Aetherius AI</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100">Selamat Datang di Konsultasi AI</h1>
       <p className="mt-3 text-lg text-slate-600 dark:text-slate-400">
         Saya adalah asisten cerdas generasi berikutnya. Bagaimana saya bisa membantu Anda memecahkan masalah kompleks hari ini?
       </p>

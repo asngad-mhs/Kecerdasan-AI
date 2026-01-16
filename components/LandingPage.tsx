@@ -61,11 +61,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartChat }) => {
             Didukung oleh Gemini
           </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-br from-white to-slate-400 text-transparent bg-clip-text">
-            Aetherius AI
+            Konsultasi AI
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
             Platform kecerdasan generasi berikutnya untuk memecahkan masalah akademis dan teknis paling kompleks di era digital.
-          p>
+          </p>
           <button 
             onClick={onStartChat} 
             className="mt-8 px-8 py-3 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full font-semibold hover:scale-105 transform transition-transform duration-300 ease-out focus:outline-none focus:ring-4 focus:ring-sky-500/50"

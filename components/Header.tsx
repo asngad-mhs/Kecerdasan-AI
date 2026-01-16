@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           </svg>
         </div>
         <h1 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">
-          Aetherius AI
+          Konsultasi AI
         </h1>
       </div>
     </header>

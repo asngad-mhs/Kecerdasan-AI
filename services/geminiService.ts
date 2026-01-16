@@ -7,11 +7,9 @@ let ai: GoogleGenAI | null = null;
 // Lazy initialization of GoogleGenAI
 const getAi = () => {
   if (!ai) {
-    const API_KEY = process.env.API_KEY;
-    if (!API_KEY) {
-      throw new Error("API_KEY environment variable not set");
-    }
-    ai = new GoogleGenAI({ apiKey: API_KEY });
+    // Pass the API_KEY directly from the environment.
+    // The SDK will handle the case where the key is missing or invalid upon the first API call.
+    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   }
   return ai;
 };

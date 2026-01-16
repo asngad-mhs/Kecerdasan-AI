@@ -2,13 +2,19 @@
 import { GoogleGenAI, Chat } from "@google/genai";
 import { MutableRefObject } from 'react';
 
-const API_KEY = process.env.API_KEY;
+let ai: GoogleGenAI | null = null;
 
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable not set");
-}
-
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+// Lazy initialization of GoogleGenAI
+const getAi = () => {
+  if (!ai) {
+    const API_KEY = process.env.API_KEY;
+    if (!API_KEY) {
+      throw new Error("API_KEY environment variable not set");
+    }
+    ai = new GoogleGenAI({ apiKey: API_KEY });
+  }
+  return ai;
+};
 
 const model = 'gemini-3-flash-preview';
 
@@ -19,8 +25,10 @@ export const getEducationalAnswerStream = async (
   chatRef: MutableRefObject<Chat | null>
 ) => {
   try {
+    const genAI = getAi(); // Get or initialize the AI instance
+
     if (!chatRef.current) {
-        chatRef.current = ai.chats.create({
+        chatRef.current = genAI.chats.create({
             model: model,
             config: {
                 systemInstruction: systemInstruction,
